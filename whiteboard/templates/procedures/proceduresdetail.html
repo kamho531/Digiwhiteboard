@@ -1,0 +1,34 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<center>
+  <div class="card" style="width: 28rem;">
+    <div class="card-header" style="font-family: Helvetica; font-size: x-large; color: blueviolet;">
+      Procedure Details
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <ul style="font-size: large; text-align: left;">
+          <li>Procedure Name: {{ procedures.proname }}</li>
+          <li>Diagnosis: {{ procedures.diagnosis }}</li>
+          <li>Comments: {{ procedures.comments }}</li>
+          <li>Admission Date: {{ procedures.admissiondate }}</li>
+          <li>Xray: {{ procedures.xray }}</li>
+          <li>Site: {{ procedures.site }}</li>
+          <li>Surgery Date: {{ procedures.surgerydate }}</li>
+          <li>Patient: {{ procedures.patient }}</li>
+          <li>Doctor: {{ procedures.doctor }}</li>
+        </ul>
+      </p>
+      <div class="card-footer text-muted">
+        <a class="btn btn-outline-warning btn-lg" href="{% url 'procedures.update' procedures.id %}" role="botton">Update</a>
+        <a class="btn btn-outline-danger btn-lg" href="{% url 'procedures.delete' procedures.id %}" role="botton">Delete</a>
+        <a class="btn btn-outline-secondary btn-lg" href="{% url 'procedures.list' %}" role="botton">Back</a>        
+      </div>
+    </div>
+  </div>
+</center>
+
+
+{% endblock %}

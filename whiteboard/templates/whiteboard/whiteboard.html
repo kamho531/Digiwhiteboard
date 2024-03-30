@@ -1,0 +1,53 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="container-fluid">
+    <h2>Digital Whiteboard</h2>
+    <br/>
+
+    <table class="table table-hover text-nowrap">
+        <thead>
+          <tr>
+            <th scope="col">Status</th>
+            <th scope="col">HSN</th>
+            <th scope="col">RUH Number</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Diagnosis</th>
+            <th scope="col">Procedure Name</th>
+            <th scope="col">Doctor</th>
+            <th scope="col">Comments</th>
+            <th scope="col">Admission Date</th>
+            <th scope="col">Location</th>
+            <th scope="col">X-ray</th>
+        </thead>
+        {% for procedure in procedures %}
+        <tbody>          
+          <tr>
+            <td scope="row">{{procedure.patient.status}}</td>
+            <td>{{procedure.patient.hsnnum}}</td>
+            <td>{{procedure.patient.ruhnum}}</td>      
+            <td>{{procedure.patient.calculateAge}}</td>
+            <td>{{procedure.patient.gender}}</td>
+            <td>{{procedure.diagnosis}}</td>
+            <td>{{procedure.proname}}</td>
+            <td>{{procedure.doctor}}</td>
+            <td>{{procedure.comments}}</td>
+            <td>{{procedure.admissiondate}}</td>
+            <td>{{procedure.patient.location}}</td>
+            <td>{{procedure.xray}}</td>
+          </tr>                    
+        </tbody>
+        {% endfor %} 
+
+    </table>
+    <br/><br/>
+</div>
+
+
+
+
+
+
+{% endblock %}

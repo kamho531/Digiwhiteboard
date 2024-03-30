@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<center>
+    <div class="card" style="width: 48rem;">
+        <div class="card-header" style="font-family: Helvetica; font-size: x-large; color: blueviolet;">
+            Delete Patient
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <form method="POST">{% csrf_token %}
+                    <h4>Are you sure to delete patient "{{ patients.firstname }} {{ patients.lastname }}"?</h4>
+                    <h4>This can't be undone!</h4>                
+                    <input type="submit" class="btn btn-outline-danger btn-lg" value="Confirm"/>
+                    <a href="{% url 'patients.list' %}" class="btn btn-outline-primary my-5 btn-lg">Cancel</a>
+                </form>
+            </p>       
+        </div>
+
+    </div>       
+</center>
+
+
+
+
+
+
+
+
+
+{% endblock %}

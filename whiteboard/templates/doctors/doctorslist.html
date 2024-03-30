@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+
+<center>
+    <div class="card" style="width: 38rem;">
+        <div class="card-header" style="font-family: Helvetica; font-size: x-large; color: blueviolet;">
+            Doctors
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <table class="table table-hover table-striped">
+                    {% for doctor in doctors %}
+                        <tr>
+                            <td style="text-align: left; font-size: large;">
+                                {{ doctor }}                               
+                            </td>
+                            <td style="text-align: right; font-size: large;">
+                                <a href="{% url 'doctors.update' doctor.id %}" class="btn btn-outline-primary btn-md">Update</a>
+                                <a href="{% url 'doctors.delete' doctor.id %}" class="btn btn-outline-danger btn-md">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </p>       
+        </div>
+        <div class="card-footer text-muted">
+            <a href="{% url 'doctors.new' %}" class="btn btn-outline-primary btn-lg">Add New Doctor</a> 
+        </div>
+    </div>
+</center>
+
+
+{% endblock %}

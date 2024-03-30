@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<center>
+    <div class="card" style="width: 28rem;">
+        <div class="card-header" style="font-family: Helvetica; font-size: x-large; color: blueviolet;">
+            User Login
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <form method="POST" style="font-size: large;">{% csrf_token %}
+                    {{ form.as_p }}
+                    </br>
+                    <input type="submit" class="btn btn-outline-primary btn-lg" />               
+                </form>
+            </p>       
+        </div>
+
+    </div>       
+</center>
+
+
+
+{% endblock %}

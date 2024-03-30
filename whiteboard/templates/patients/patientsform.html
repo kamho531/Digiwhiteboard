@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<center>
+    <div class="card" style="width: 28rem;">
+        <div class="card-header" style="font-family: Helvetica; font-size: x-large; color: blueviolet;">
+            Patient Details
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <form method="POST">{% csrf_token %}   <!-- csrf = Cross-Site Request Forgery -->
+                    {{ form.as_p }} 
+                    <div class="card-footer text-muted"></div>
+                    <button type="submit" class="btn btn-outline-primary btn-lg">Submit</button>
+                    <a href="{% url 'patients.list' %}" class="btn btn-outline-secondary btn-lg">Cancel</a>
+                </form>
+            </p>       
+        </div>
+
+    </div>       
+</center>
+
+
+{% endblock %}

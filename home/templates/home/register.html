@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<center>
+    <div class="card" style="width: 48rem;">
+        <div class="card-header" style="font-family: Helvetica; font-size: x-large; color: blueviolet;">
+            User Registration
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <form method="POST" style="font-size: large; text-align: left; margin: 0 auto; width: 600px;">{% csrf_token %}
+                    {{ form.as_p }}
+                    </br>
+                    <center><input type="submit" class="btn btn-outline-primary btn-lg" name="Sign Up"/></center>                
+                </form>
+            </p>       
+        </div>
+
+    </div>       
+</center>
+
+
+
+{% endblock %}

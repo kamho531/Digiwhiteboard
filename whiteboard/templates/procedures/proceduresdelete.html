@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<center>
+    <div class="card" style="width: 58rem;">
+        <div class="card-header" style="font-family: Helvetica; font-size: x-large; color: blueviolet;">
+            Delete Procedure
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <form method="POST">{% csrf_token %}
+                    <h4>Are you sure to delete procedure "{{ procedures.proname }} {{ procedures.diagnosis }} (Dr. {{ procedures.doctor.lastname }})"?</h4>
+                    <h4>This can't be undone!</h4>                
+                    <input type="submit" class="btn btn-outline-danger btn-lg" value="Confirm"/>
+                    <a href="{% url 'procedures.list' %}" class="btn btn-outline-primary my-5 btn-lg">Cancel</a>
+                </form>
+            </p>       
+        </div>
+
+    </div>       
+</center>
+
+
+{% endblock %}

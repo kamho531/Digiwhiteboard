@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+
+<center>
+    <div class="card" style="width: 28rem;">
+        <div class="card-header" style="font-family: Helvetica; font-size: x-large; color: blueviolet;">
+            Patients
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <table class="table table-hover table-striped">
+                    {% for patient in patients %}
+                        <tr style="text-align: left; font-size: large;">
+                            <td>
+                                <a href="{% url 'patients.detail' patient.id %}">{{ patient }}</a>               
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </p>       
+        </div>
+        <div class="card-footer text-muted">
+            <a href="{% url 'patients.new' %}" class="btn btn-outline-primary btn-lg">Add New Patient</a>
+        </div>
+    </div>       
+</center>
+
+
+
+{% endblock %}

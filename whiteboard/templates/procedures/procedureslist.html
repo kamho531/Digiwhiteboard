@@ -1,0 +1,34 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+
+<center>
+    <div class="card" style="width: 38rem;">
+        <div class="card-header" style="font-family: Helvetica; font-size: x-large; color: blueviolet;">
+            Procedures
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <table class="table table-hover table-striped">
+                    {% for procedure in procedures %}
+                        <tr style="text-align: left; font-size: large;">
+                            <td>
+                                <a href="{% url 'procedures.detail' procedure.id %}">{{ procedure }} (Dr. {{ procedure.doctor.lastname }})</a>               
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </p>       
+        </div>
+        <div class="card-footer text-muted">
+            <a href="{% url 'procedures.new' %}" class="btn btn-outline-primary btn-lg">Add New Procedure</a>
+        </div>
+    </div>
+</center>
+
+
+
+
+
+{% endblock %}

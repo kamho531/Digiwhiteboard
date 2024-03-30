@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<center>
+  <div class="card" style="width: 28rem;">
+    <div class="card-header" style="font-family: Helvetica; font-size: x-large; color: blueviolet;">
+      Doctor Name
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <ul style="font-size: large; text-align: left;">
+          <li>First Name: {{ doctors.firstname }}</li>
+          <li>Last Name: {{ doctors.lastname }}</li>
+        </ul>
+      </p>
+    </div>
+    <div class="card-footer text-muted">
+      <a class="btn btn-outline-primary btn-lg" href="{% url 'doctors.update' pk=doctors.id %}" role="botton">Update</a>
+      <a class="btn btn-outline-danger btn-lg" href="{% url 'doctors.delete' pk=doctors.id %}" role="botton">Delete</a>
+      <a class="btn btn-outline-secondary btn-lg" href="{% url 'doctors.list' %}" role="botton">Back</a>        
+    </div>
+</center>
+
+
+{% endblock %}

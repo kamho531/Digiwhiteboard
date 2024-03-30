@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center>
+    <div class="card" style="width: 28rem;">
+        <div class="card-header" style="font-family: Helvetica; font-size: x-large; color: blueviolet;">
+            Doctor Name
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <form method="POST" action="">
+                    {% csrf_token %}   <!-- csrf = Cross-Site Request Forgery -->
+                    {{ form.as_p }} 
+
+                    <button type="submit" class="btn btn-outline-primary btn-lg">Submit</button>
+                </form>
+                {{ form.id }}
+            </p>       
+        </div>
+
+    </div>
+</center>
+
+
+
+{% endblock %}
